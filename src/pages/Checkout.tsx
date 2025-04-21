@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MainLayout } from '@/components/layouts/MainLayout';
@@ -209,10 +208,10 @@ export default function Checkout() {
                       <div className="flex flex-col">
                         <span>{item.product.name} × {item.quantity}</span>
                         <span className="text-xs text-muted-foreground">
-                          ${item.product.price.toFixed(2)} each
+                          ₹{item.product.price.toFixed(2)} each
                         </span>
                       </div>
-                      <span>${(item.product.price * item.quantity).toFixed(2)}</span>
+                      <span>₹{(item.product.price * item.quantity).toFixed(2)}</span>
                     </div>
                   ))}
                   
@@ -221,16 +220,16 @@ export default function Checkout() {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Subtotal</span>
-                      <span>${totalPrice.toFixed(2)}</span>
+                      <span>₹{totalPrice.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Shipping</span>
-                      <span>$0.00</span>
+                      <span>₹0.00</span>
                     </div>
                     <div className="border-t pt-2 mt-2">
                       <div className="flex justify-between font-medium">
                         <span>Total</span>
-                        <span>${totalPrice.toFixed(2)}</span>
+                        <span>₹{totalPrice.toFixed(2)}</span>
                       </div>
                       <span className="text-xs text-muted-foreground">
                         (Including all taxes)
